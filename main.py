@@ -4,6 +4,10 @@ import time
 import math
 from core_functions import *
 
+#Global Variables
+side = 500
+hypotenuse = math.sqrt((side**2)+(side**2))
+
 #Background
 turtle.bgcolor("light blue")
 
@@ -19,12 +23,18 @@ bob.right(45)
 bob.color("black")
 bob.fillcolor("white")
 bob.begin_fill()
-polygon(bob, 4, 500, "right")
+polygon(bob, 4, side, "right")
 bob.end_fill()
 bob.right(45)
 
-#Insides
-bob.forward(math.sqrt(500000))
+#Corner To Corner
+bob.forward(hypotenuse)
+bob.right(135)
+bob.penup()
+bob.forward(side)
+bob.right(135)
+bob.pendown()
+bob.forward(hypotenuse)
 
 #End of Program
 time.sleep(5)
